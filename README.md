@@ -42,10 +42,10 @@ shell
 
 2. Install the dependencies:
 
+`npm install`
+
+
    
-command
-   `cd image-uploader`
-   `npm install`
   
 
 
@@ -55,7 +55,7 @@ command
 4. Start the application:
 
 command
-   npm start
+   `npm start`
   
 
 
