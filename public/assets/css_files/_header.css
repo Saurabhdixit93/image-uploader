@@ -1,0 +1,29 @@
+.temp{
+    display: flex;
+    text-align: end;
+    justify-content: end;
+}
+@media screen and (max-width:600px) {
+ .temp{
+    display: flex;
+    text-align: start;
+    justify-content: start;
+ }
+}
+
+.btn{
+    border-radius: 20em;
+}
+.shadow{
+    border-bottom: 1px solid red;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 500;
+}
+.navbar-brand{
+    font-family:'Arial Narrow Bold', sans-serif;
+    font-size: 25px;
+    color: white;
+}

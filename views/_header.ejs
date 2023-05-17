@@ -1,0 +1,109 @@
+<link rel="stylesheet" href="/assets/css_files/_header.css">
+
+<header class="header text-white">
+    <nav class="navbar navbar-expand-lg navbar-white bg-dark p-2 shadow mb-4">
+      <a class="navbar-brand" href="/">SmartTech</a>
+      <button class="navbar-toggler navbar-light bg-danger " type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse temp" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about-us/About-Page">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact/submit-form">Contact</a>
+          </li>
+          <% if(locals.user) {%>
+          <li class="nav-item dropdown mb-1">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Upload
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="/userImage/upload-image-page">Upload Image</a></li>
+                  <li><a class="dropdown-item" href="/userImage/all-images/<%= user.id %>">Show All Images</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown mb-1">
+                <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Profile
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="/userId/show-profile/<%= user.id%>">See Profile</a></li>
+                  <li><a class="dropdown-item" href="/userId/get-profile">Update Profile</a></li>
+                </ul>
+            </li>
+          <%}%>
+          <% if(!locals.user) {%> 
+            <li class="nav-item mb-2">
+              <button type="button" class="btn btn-outline-danger me-2 "onclick="window.location.href='/user/login'">Login</button>
+              <button type="button" class="btn btn-outline-warning me-2"onclick="window.location.href='/user/register'" >Sign up</button>
+            </li>
+          <%}%>
+          <% if(locals.user) {%> 
+            <li class="nav-item">
+              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal2">Logout</button>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Delete Account</button>
+            </li>
+          <%}%>
+        </ul>
+      </div>
+    </nav>
+</header>
+
+<!-- ------------------------- Modal for delete  ---------------------------------------------->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="card-title">Delete Account</h1>
+          <button type="button" class="close btn-danger" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <div class="card">
+                <div class="card-body">
+                <p class="card-text">Are you sure you want to delete your account?</p>
+                <form action="/user/delete-account?_method=DELETE" method="POST">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="submit" class="btn btn-danger">Delete Account</button>
+                </form>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+<!-- ------------------------- Modal for Logout  ---------------------------------------------->
+<div class="modal fade" id="myModal2" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="card-title">Logout</h1>
+          <button type="button" class="close btn-danger" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <div class="card">
+                <div class="card-body">
+                <p class="card-text">Are you sure you want to Logout?</p>
+                    <button type="button" class="btn btn-danger me-2"onclick="window.location.href='/user/logout'" >Logout</button>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

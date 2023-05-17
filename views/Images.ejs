@@ -1,0 +1,22 @@
+<title> <%= title %></title>
+
+<div class="container mgn-top">
+  <div class="row">
+    <% if(images.length === 0){%>
+      <div class="alert alert-info">No files uploaded yet.</div>
+    <%}%>
+    <% for( image of images ) {%>
+      <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+        <div class="card">
+          <img src="<%= image.imageUrl %>" style="height: 200px; min-height: 200px;" class="card-img-top" alt="Image">
+          <div class="card-body">
+            <button class="btn btn-danger btn-sm float-right delete-btn" onclick="window.location.href='/userImage/delete-image/<%= image.id %>'">Delete</button>
+            <a href="<%= image.imageUrl %>" class="mr-2" download>
+              <button class="btn btn-primary btn-sm float-right mr-2">Download</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    <%}%>
+  </div>
+</div>

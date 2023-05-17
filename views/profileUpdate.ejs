@@ -1,0 +1,32 @@
+<title><%= title %> </title>
+<link rel="stylesheet" href="/assets/css_files/profileUpdate.css">
+
+<div class="container mgn-top">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="text-center mb-4">Profile Update</h1>
+        <form class="profile-form" action="/userId/update-profile" method="post">
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" name="name" id="name" placeholder="Enter your name" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email" required>
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" name="password" id="password" placeholder="Enter your password" required>
+          </div>
+          <div class="mb-3">
+            <label for="confirmPassword" class="form-label">Confirm  Password</label>
+            <input type="password" class="form-control" name="confirmPassword" id="confirmPassword" placeholder="Enter your Confirm  Password" required>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary w-100">Update</button>
+          </div>
+        </form>
+      </div>
+    </div>
+</div>
+

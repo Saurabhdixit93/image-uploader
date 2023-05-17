@@ -1,0 +1,49 @@
+<title><%= title %> </title>
+
+<style>
+    .jumbotron {
+      background-image: url("https://www.freecodecamp.org/news/content/images/size/w2000/2022/09/jonatan-pie-3l3RwQdHRHg-unsplash.jpg");
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .jumbotron h1 {
+      font-size: 4rem;
+      color: #ffffff;
+      margin-bottom: 2rem;
+    }
+
+    .jumbotron p {
+      font-size: 1.5rem;
+      color: #ffffff;
+    }
+
+    @media (max-width: 576px) {
+      .jumbotron h1 {
+        font-size: 3rem;
+      }
+
+      .jumbotron p {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+
+
+<!-- Jumbotron -->
+<div class="jumbotron ">
+    <div class="container">
+        <h1 class="display-4">Welcome to Image Uploader</h1>
+        <p class="lead">Upload and manage your images with ease</p>
+        <% if(! locals.user){%>
+         <a href="/user/register" class="btn btn-primary btn-lg upload-btn">Get Started</a>
+        <%}%>
+    </div>
+</div
+
+
+

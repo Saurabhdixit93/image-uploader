@@ -1,0 +1,13 @@
+  .profile-form {
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+
+  .profile-form .form-control {
+    border-radius: 0;
+  }
+
+  .profile-form .btn {
+    border-radius: 0;
+  }
