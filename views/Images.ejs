@@ -8,7 +8,7 @@
     <% for( image of images ) {%>
       <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
         <div class="card">
-          <img src="<%= image.imageUrl %>" style="height: 200px; min-height: 200px;" class="card-img-top" alt="Image">
+          <img src="<%= image.imageUrl %>" style="height: auto;width: 100%; min-height: 200px;" class="card-img-top" alt="Image">
           <div class="card-body">
             <button class="btn btn-danger btn-sm float-right delete-btn" onclick="window.location.href='/userImage/delete-image/<%= image.id %>'">Delete</button>
             <a href="<%= image.imageUrl %>" class="mr-2" download>
